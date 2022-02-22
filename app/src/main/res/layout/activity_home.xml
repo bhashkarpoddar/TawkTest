@@ -57,13 +57,58 @@
 
         </com.google.android.material.appbar.AppBarLayout>
 
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmerFrameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <!-- Adding 15 rows of placeholders -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <include layout="@layout/shimmer_user_itemview" />
+
+                <include layout="@layout/shimmer_user_itemview" />
+
+                <include layout="@layout/shimmer_user_itemview" />
+
+                <include layout="@layout/shimmer_user_itemview" />
+
+                <include layout="@layout/shimmer_user_itemview" />
+
+                <include layout="@layout/shimmer_user_itemview" />
+
+                <include layout="@layout/shimmer_user_itemview" />
+
+                <include layout="@layout/shimmer_user_itemview" />
+
+                <include layout="@layout/shimmer_user_itemview" />
+
+                <include layout="@layout/shimmer_user_itemview" />
+
+                <include layout="@layout/shimmer_user_itemview" />
+
+                <include layout="@layout/shimmer_user_itemview" />
+
+                <include layout="@layout/shimmer_user_itemview" />
+
+                <include layout="@layout/shimmer_user_itemview" />
+
+                <include layout="@layout/shimmer_user_itemview" />
+            </LinearLayout>
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvUsers"
             android:layout_width="@dimen/zeroSize"
             android:layout_height="@dimen/zeroSize"
             android:layout_margin="@dimen/margin_five"
+            android:visibility="gone"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/userview_itemview"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

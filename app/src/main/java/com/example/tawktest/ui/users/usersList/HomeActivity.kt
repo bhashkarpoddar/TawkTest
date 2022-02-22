@@ -19,7 +19,16 @@ class HomeActivity : AppCompatActivity() {
         viewModel = getViewModel { UsersViewModel() }
         binding.viewModel = viewModel
 
+    }
 
+    override fun onResume() {
+        super.onResume()
+        binding.shimmerFrameLayout.startShimmerAnimation()
+    }
+
+    override fun onPause() {
+        binding.shimmerFrameLayout.stopShimmerAnimation()
+        super.onPause()
     }
 
 }
