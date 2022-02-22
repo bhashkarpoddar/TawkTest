@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.tawktest.ui.users.UsersViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.users.usersList.HomeActivity">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="@dimen/zeroSize"
+            android:layout_height="wrap_content"
+            android:background="@color/skyBlue"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/searchToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="?attr/actionBarSize"
+                app:contentInsetEnd="0dp"
+                app:contentInsetLeft="0dp"
+                app:contentInsetRight="0dp"
+                app:contentInsetStart="0dp">
+
+                <AutoCompleteTextView
+                    android:id="@+id/searchBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimens_42dp"
+                    android:layout_marginHorizontal="@dimen/margin_normal"
+                    android:layout_marginVertical="@dimen/margin_normal"
+                    android:background="@drawable/rounded_corner_ash_bg"
+                    android:drawableEnd="@drawable/ic_baseline_search_24"
+                    android:drawablePadding="@dimen/padding_small"
+                    android:focusableInTouchMode="true"
+                    android:gravity="start|center_vertical"
+                    android:hint="@string/search_hint"
+                    android:inputType="textPersonName"
+                    android:minHeight="@dimen/dimens_35dp"
+                    android:paddingStart="@dimen/padding_normal"
+                    android:paddingEnd="@dimen/padding_normal"
+                    android:saveEnabled="false"
+                    android:singleLine="true"
+                    android:textSize="@dimen/font_size_verysmall" />
+
+            </com.google.android.material.appbar.MaterialToolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvUsers"
+            android:layout_width="@dimen/zeroSize"
+            android:layout_height="@dimen/zeroSize"
+            android:layout_margin="@dimen/margin_five"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/userview_itemview"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/appbar"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

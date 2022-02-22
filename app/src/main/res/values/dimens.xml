@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    //Zero Size width
+    <dimen name="zeroSize">0dp</dimen>
+
+    //Margin
+    <dimen name="margin_one">1dp</dimen>
+    <dimen name="margin_two">2dp</dimen>
+    <dimen name="margin_three">3dp</dimen>
+    <dimen name="margin_four">4dp</dimen>
+    <dimen name="margin_five">5dp</dimen>
+    <dimen name="margin_six">6dp</dimen>
+    <dimen name="margin_verysmall">8dp</dimen>
+    <dimen name="margin_small">10dp</dimen>
+    <dimen name="margin_medium">12dp</dimen>
+    <dimen name="margin_normal">15dp</dimen>
+    <dimen name="margin_sixteen">16dp</dimen>
+    <dimen name="margin_eighteen">18dp</dimen>
+    <dimen name="margin_large">20dp</dimen>
+    <dimen name="margin_xlarge">24dp</dimen>
+    <dimen name="margin_thirty">30dp</dimen>
+    <dimen name="margin_thirtyfive">35dp</dimen>
+    <dimen name="margin_forty">40dp</dimen>
+    <dimen name="margin_forty_two">42dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="margin_eighty">80dp</dimen>
+    <dimen name="margin_twenty_five">25dp</dimen>
+    //Padding
+    <dimen name="padding_one">1dp</dimen>
+    <dimen name="padding_two">2dp</dimen>
+    <dimen name="padding_three">3dp</dimen>
+    <dimen name="padding_four">4dp</dimen>
+    <dimen name="padding_five">5dp</dimen>
+    <dimen name="padding_verysmall">8dp</dimen>
+    <dimen name="padding_small">10dp</dimen>
+    <dimen name="padding_medium">12dp</dimen>
+    <dimen name="padding_normal">15dp</dimen>
+    <dimen name="padding_eighteen">18dp</dimen>
+    <dimen name="padding_large">20dp</dimen>
+    <dimen name="padding_xlarge">24dp</dimen>
+    //FontSize
+    <dimen name="font_size_three">3sp</dimen>
+    <dimen name="font_size_five">5sp</dimen>
+    <dimen name="font_size_six">6sp</dimen>
+    <dimen name="font_size_eight">8sp</dimen>
+    <dimen name="font_size_nine">9sp</dimen>
+    <dimen name="font_size_ten">10sp</dimen>
+    <dimen name="font_size_verysmall">12sp</dimen>
+    <dimen name="font_size_small">14sp</dimen>
+    <dimen name="font_size_fifteen">15sp</dimen>
+    <dimen name="font_size_medium">16sp</dimen>
+    <dimen name="font_size_semi_bold">17sp</dimen>
+    <dimen name="font_size_normal">18sp</dimen>
+    <dimen name="font_size_large">20sp</dimen>
+    <dimen name="font_size_large1">24sp</dimen>
+    <dimen name="font_size_large2">28sp</dimen>
+    <dimen name="font_size_xlarge">32sp</dimen>
+
+    <dimen name="dimens_42dp">42dp</dimen>
+    <dimen name="dimens_40dp">40dp</dimen>
+    <dimen name="dimens_35dp">35dp</dimen>
+</resources>
