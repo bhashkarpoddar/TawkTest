@@ -72,5 +72,9 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:2.9.0"
     /*Shimmer Effect*/
     implementation 'com.facebook.shimmer:shimmer:0.1.0@aar'
+    /*Room Persistent Library*/
+    implementation "androidx.room:room-runtime:2.4.1"
+    kapt "androidx.room:room-compiler:2.4.1"
+    implementation "androidx.room:room-ktx:2.4.1"
 
 }
