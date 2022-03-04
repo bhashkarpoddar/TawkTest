@@ -1,9 +1,11 @@
 package com.example.tawktest.data.dataSource.local.dao
 
 import androidx.lifecycle.LiveData
+import androidx.paging.DataSource
 import androidx.room.*
-import com.example.tawktest.data.dataSource.local.entity.UsersEntity
+import com.example.tawktest.data.entity.UsersEntity
 
+@Dao
 interface UsersDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE) //if some data is same/conflict, it'll be replace with new data.
     suspend fun insertUser(user: UsersEntity)
@@ -27,4 +29,11 @@ interface UsersDao {
 
     @Query("DELETE FROM UsersEntity WHERE id = :id") //you can use this too, for delete user by id.
     suspend fun deleteUserById(id: Int)
+
+    // Do a similar query as the search API:
+    // Look for Users that contain the query string in the name or in the description
+    // and order those results ascending, by the name
+    @Query("SELECT * FROM USERSENTITY WHERE (login LIKE :queryString) OR (note LIKE " +
+            ":queryString) ORDER BY login ASC")
+    fun usersBySearch(queryString: String): DataSource.Factory<Int, UsersEntity>
 }

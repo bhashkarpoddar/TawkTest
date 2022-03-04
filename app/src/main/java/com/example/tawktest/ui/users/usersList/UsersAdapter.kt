@@ -5,10 +5,11 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tawktest.R
+import com.example.tawktest.data.entity.UsersEntity
 import com.example.tawktest.data.model.User
 import com.example.tawktest.databinding.UserviewItemviewBinding
 
-class UsersAdapter(private var items: MutableList<User>, private val interaction: Interaction) : RecyclerView.Adapter<UsersAdapter.UsersViewHolder>() {
+class UsersAdapter(private var items: MutableList<UsersEntity>, private val interaction: Interaction) : RecyclerView.Adapter<UsersAdapter.UsersViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UsersViewHolder {
         val binding: UserviewItemviewBinding = DataBindingUtil.inflate(LayoutInflater.from(parent.context), R.layout.userview_itemview, parent, false)
@@ -28,15 +29,15 @@ class UsersAdapter(private var items: MutableList<User>, private val interaction
     }
 
     class UsersViewHolder(private val binding: UserviewItemviewBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: User, interaction: Interaction, adapterPosition: Int){
+        fun bind(item: UsersEntity, interaction: Interaction, adapterPosition: Int){
             binding.user = item
             binding.executePendingBindings()
         }
     }
 
     interface Interaction {
-        fun onItemClick(position: Int, item: User)
-        fun onEdit(position: Int, item: User)
+        fun onItemClick(position: Int, item: UsersEntity)
+        fun onEdit(position: Int, item: UsersEntity)
     }
 
     /*fun removeAt(position: Int) {
@@ -50,7 +51,7 @@ class UsersAdapter(private var items: MutableList<User>, private val interaction
         notifyItemInserted(items.size - 1)
     }*/
 
-    fun setData(list: MutableList<User>){
+    fun setData(list: MutableList<UsersEntity>){
         items = list
         notifyDataSetChanged()
     }

@@ -6,7 +6,7 @@
     <data>
         <variable
             name="user"
-            type="com.example.tawktest.data.model.User" />
+            type="com.example.tawktest.data.entity.UsersEntity" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -6,11 +6,13 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.example.tawktest.R
+import com.example.tawktest.data.dataSource.local.DatabaseBuilder
 import com.example.tawktest.data.dataSource.remote.RetrofitBuilder
 import com.example.tawktest.data.dataSource.remote.Status.SUCCESS
 import com.example.tawktest.data.dataSource.remote.Status.ERROR
 import com.example.tawktest.data.dataSource.remote.Status.LOADING
 import com.example.tawktest.data.dataSource.repository.UsersRepository
+import com.example.tawktest.data.entity.UsersEntity
 import com.example.tawktest.data.model.User
 import com.example.tawktest.databinding.ActivityHomeBinding
 import com.example.tawktest.ui.users.UsersViewModel
@@ -23,13 +25,16 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeBinding
     private lateinit var viewModel: UsersViewModel
     private lateinit var adapter: UsersAdapter
-    private var usersList: MutableList<User>? = null
+    private var usersList: MutableList<UsersEntity>? = null
+    private val appDataBaseInstance by lazy {
+        DatabaseBuilder.getInstance(this)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_home)
         binding.lifecycleOwner = this
-        viewModel = getViewModel { UsersViewModel(UsersRepository(RetrofitBuilder.apiService)) }
+        viewModel = getViewModel { UsersViewModel(UsersRepository(RetrofitBuilder.apiService, appDataBaseInstance.getUsersDao())) }
         binding.viewModel = viewModel
 
         initAdapter()
@@ -67,16 +72,20 @@ class HomeActivity : AppCompatActivity() {
                 }
             }
         }
+
+        viewModel.usersList.observe(this){
+            Log.d("TAG", "initObserver with Internet: ${it.data}")
+        }
     }
 
     private fun initAdapter() {
         usersList = mutableListOf()
         adapter = UsersAdapter(usersList!!, object : UsersAdapter.Interaction{
-            override fun onItemClick(position: Int, item: User) {
+            override fun onItemClick(position: Int, item: UsersEntity) {
 
             }
 
-            override fun onEdit(position: Int, item: User) {
+            override fun onEdit(position: Int, item: UsersEntity) {
 
             }
         })
