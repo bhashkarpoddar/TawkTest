@@ -17,9 +17,8 @@ object DatabaseBuilder {
     }
 
     private fun buildRoomDB(context: Context) =
-        Room.databaseBuilder(
-            context.applicationContext,
-            AppDatabase::class.java,
-            DB_NAME
-        ).build()
+        Room.databaseBuilder(context.applicationContext,
+            AppDatabase::class.java, DB_NAME)
+            .fallbackToDestructiveMigration()
+            .build()
 }

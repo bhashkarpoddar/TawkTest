@@ -8,7 +8,7 @@ data class UsersEntity(
     @PrimaryKey val id: Int,
     val login: String,
     val avatar_url: String,
-    val note: String,
+    val note: String?,
     val events_url: String,
     val followers_url: String,
     val following_url: String,
